@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-cribdrag",
+  "version": "1.0.0",
+  "description": "Crib dragging tools and attacks in NodeJS",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run cribdrag",
+    "cribdrag": "ts-node src/examples/cribdrag.ts",
+    "xor": "ts-node src/examples/xor.ts",
+    "encrypt": "ts-node src/examples/encrypt.ts",
+    "xorencrypt": "ts-node src/examples/xorencrypt.ts",
+    "phone": "ts-node src/examples/phone.ts",
+    "lint": "tslint -c tslint.json src/**/*.ts"
+  },
+  "author": "Frank Hassanabad",
+  "license": "GPL",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "ts-node": "^5.0.0",
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "0.0.36",
+    "@types/node": "^9.4.6"
+  }
+}
