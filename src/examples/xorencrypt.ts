@@ -1,5 +1,3 @@
-'use strict';
-
 import { xorStrings } from '../conversions';
 import { encrypt } from '../encrypt';
 

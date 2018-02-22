@@ -1,11 +1,7 @@
-'use strict';
-
-import { encrypt } from '../encrypt';
-
 import { asciiMatch } from '../asciimatch';
-import { printLine, printPlain } from '../printutils';
-
 import { xorPlainTextWithCrib, xorStrings } from '../conversions';
+import { encrypt } from '../encrypt';
+import { printPlain } from '../printutils';
 
 const phoneNumbers = [
   '555-555-5555',

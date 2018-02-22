@@ -1,5 +1,3 @@
-'use strict';
-
 import * as crypto from 'crypto';
 
 const password = 'I am some super long password';

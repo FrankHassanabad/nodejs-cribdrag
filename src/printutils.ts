@@ -1,5 +1,3 @@
-'use strict';
-
 import { hexToString } from './conversions';
 
 export const printLine = (chunksInHex: string[], charSetRegex: string): void => {
@@ -14,7 +12,7 @@ export const printLine = (chunksInHex: string[], charSetRegex: string): void => 
 };
 
 export const printPlain = (chunksInHex: string[]): void => {
-  chunksInHex.forEach((chunk: any, index: any) => {
+  chunksInHex.forEach((chunk: any) => {
     const hexString = hexToString(chunk);
     console.log(hexString);
   });

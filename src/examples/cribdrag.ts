@@ -1,5 +1,3 @@
-'use strct';
-
 import * as inquirer from 'inquirer';
 import { xorPlainTextWithCrib } from '../conversions';
 import { printLine } from '../printutils';

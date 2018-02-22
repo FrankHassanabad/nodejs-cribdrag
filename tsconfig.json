@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "alwaysStrict": true,
+    "lib": ["es6"],
+    "module": "commonJS",
     "noImplicitAny": true,
-    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dest/",
     "preserveConstEnums": true,
-    "outFile": "../../built/local/tsc.js",
+    "removeComments": true,
     "sourceMap": true,
-    "lib": ["es6"]
   },
   "include": [
     "src/**/*"

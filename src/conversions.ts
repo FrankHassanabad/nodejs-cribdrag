@@ -1,5 +1,3 @@
-'use strict';
-
 // TODO: This will not work for strings codes that are less than 16.
 // It still needs to pad them with 01, 02, etc...
 const stringToHex = (hexString: string): string => {
