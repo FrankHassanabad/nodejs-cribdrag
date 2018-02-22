@@ -5,6 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "npm run cribdrag",
+    "build": "tsc -p .",
+    "clean": "rimraf dest",
     "cribdrag": "ts-node src/examples/cribdrag.ts",
     "xor": "ts-node src/examples/xor.ts",
     "encrypt": "ts-node src/examples/encrypt.ts",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@types/inquirer": "0.0.36",
-    "@types/node": "^9.4.6"
+    "@types/node": "^9.4.6",
+    "rimraf": "^2.6.2"
   }
 }
