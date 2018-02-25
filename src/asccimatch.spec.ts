@@ -10,7 +10,9 @@ describe('asciiMatch', () => {
   it('should match n to Frank', () => expect(asciiMatch(frankInHex, 'n')).to.be.true);
   it('should match k to Frank', () => expect(asciiMatch(frankInHex, 'k')).to.be.true);
 
-  it('should not match lower case f', () => expect(asciiMatch(frankInHex, 'f')).to.be.false);
-  it('should not match letter not in the group such as z', () => expect(asciiMatch(frankInHex, 'z')).to.be.false);
+  it('should not match lower case f', () =>
+    expect(asciiMatch(frankInHex, 'f')).to.be.false);
 
+  it('should not match letter not in the group such as z', () =>
+    expect(asciiMatch(frankInHex, 'z')).to.be.false);
 });

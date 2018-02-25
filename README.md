@@ -1,11 +1,11 @@
 # Introduction
 
-Based on tooling and ideas from  
+Based on tooling and ideas from
 https://github.com/SpiderLabs/cribdrag
 
-And the articles it came from:  
-https://www.trustwave.com/Resources/SpiderLabs-Blog/The-Way-of-the-Cryptologist/  
-http://jarmoc.com/blog/2013/08/12/otp/  
+And the articles it came from:
+https://www.trustwave.com/Resources/SpiderLabs-Blog/The-Way-of-the-Cryptologist/
+http://jarmoc.com/blog/2013/08/12/otp/
 
 This is a NodeJS based crib dragger. This performs crib dragging attacks against ciphertext encrypted using an XOR operation with a predictable key.
 
@@ -26,7 +26,7 @@ $ npm install
 For basic xor'ing of two strings
 
 ```sh
-$ npm run xor 11 11
+$ npm run xor 10 11
 01
 ```
 

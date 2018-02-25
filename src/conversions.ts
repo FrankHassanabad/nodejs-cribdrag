@@ -1,43 +1,39 @@
-// TODO: This will not work for strings codes that are less than 16.
-// It still needs to pad them with 01, 02, etc...
-const stringToHex = (hexString: string): string => {
-  const stringToArray = hexString.split('');
-  return stringToArray.reduce((accum: any, val: any) => {
-    return accum + val.charCodeAt(0).toString(16);
-  }, '');
-};
 
-const hexToString = (hexString: string): string => {
-  const splitByTwo = hexString.match(/.{1,2}/g) || [];
-  return splitByTwo.reduce((accum: any, split: any) => {
-    return accum = accum + String.fromCharCode(parseInt(split, 16));
-  }, '');
-};
+export const stringToHex = (hexString: string): string =>
+  hexString.split('').reduce((accum, val) =>
+    accum + val.charCodeAt(0).toString(16), '');
 
-const xorStrings = (string1: string, string2: string): string => {
+export const hexToString = (hexString: string): string =>
+  (hexString.match(/.{1,2}/g) || []).reduce((accum, split) =>
+    accum = accum + String.fromCharCode(parseInt(split, 16)), '');
+
+export const xorStrings = (string1: string, string2: string): string => {
   const [left, right] = padEitherSideEmptyZeros(Array.from(string1), Array.from(string2));
   return xorSameLength(left, right);
 };
 
-const xorSameLength = (string1: string[], string2: string): string => {
-  return string1.reduce((accum: any, charVal: any, index: any) =>
-    accum + (parseInt(charVal, 16) ^ parseInt(string2[index], 16)).toString(16)
-  , '');
+export const xorSameLength = (string1: ReadonlyArray<string>, string2: ReadonlyArray<string>): string => {
+  throwIfLengthNotSame(string1, string2);
+  return string1.reduce((accum, charVal, index) =>
+    accum + (parseInt(charVal, 16) ^ parseInt(string2[index], 16)).toString(16), '');
 };
 
-const padEitherSideEmptyZeros = (string1: string[], string2: string[]): any => {
-  if (string1.length > string2.length) {
-    const emptyZeros = Array(string1.length - string2.length).fill('0');
-    return [string1, string2.concat(emptyZeros)];
-  } else if (string1.length < string2.length) {
-    const emptyZeros = Array(string2.length - string1.length).fill('0');
-    return [string1.concat(emptyZeros), string2];
-  } else {
-    return [string1, string2];
-  }
+export const padEitherSideEmptyZeros = (
+  string1: ReadonlyArray<string>,
+  string2: ReadonlyArray<string>,
+): Array<ReadonlyArray<string>> => {
+    if (string1.length > string2.length) {
+      const emptyZeros = Array(string1.length - string2.length).fill('0');
+      return [string1, string2.concat(emptyZeros)];
+    } else if (string1.length < string2.length) {
+      const emptyZeros = Array(string2.length - string1.length).fill('0');
+      return [string1.concat(emptyZeros), string2];
+    } else {
+      return [string1, string2];
+    }
 };
 
-const xorPlainTextWithCrib = (cipherText: string, crib: string) => {
+export const xorPlainTextWithCrib = (cipherText: string, crib: string) => {
   const cribInHex = stringToHex(crib);
   let chunks: any = [];
   for (let i = 0; i <= cipherText.length - cribInHex.length + 1; i += 2) {
@@ -47,11 +43,12 @@ const xorPlainTextWithCrib = (cipherText: string, crib: string) => {
   return chunks;
 };
 
-export {
-  stringToHex,
-  hexToString,
-  xorStrings,
-  xorPlainTextWithCrib,
-  xorSameLength,
-  padEitherSideEmptyZeros,
+export const throwIfLengthNotSame = (array1: ReadonlyArray<string>, array2: ReadonlyArray<string>) => {
+  if (array1.length !== array2.length) {
+    throw TypeError(
+      `Array lengths need to be equal: ` +
+      `array1.length=${array1.length} ` +
+      `array2.length=${array2.length}`,
+    );
+  }
 };
