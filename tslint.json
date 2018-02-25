@@ -5,9 +5,12 @@
   ],
   "jsRules": {},
   "rules": {
+    "arrow-parens": false,
     "quotemark": [true, "single"],
     "no-console": [false],
-    "no-bitwise": [false]
+    "no-bitwise": [false],
+    "no-unused-expression": false
   },
-  "rulesDirectory": []
+  "rulesDirectory": [
+  ]
 }
