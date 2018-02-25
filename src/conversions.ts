@@ -8,7 +8,7 @@ const stringToHex = (hexString: string): string => {
 };
 
 const hexToString = (hexString: string): string => {
-  const splitByTwo = hexString.match(/.{1,2}/g);
+  const splitByTwo = hexString.match(/.{1,2}/g) || [];
   return splitByTwo.reduce((accum: any, split: any) => {
     return accum = accum + String.fromCharCode(parseInt(split, 16));
   }, '');

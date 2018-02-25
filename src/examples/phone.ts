@@ -36,7 +36,7 @@ for (let i = 0; i < encryptedPhoneNumbers.length - 1; ++i) {
   }
 }
 
-let exactMatch: string = null;
+let exactMatch: string = '';
 if (matches.length === 2) {
   if (matches[0][1] === matches[1][0]) {
     exactMatch = matches[0][1];
