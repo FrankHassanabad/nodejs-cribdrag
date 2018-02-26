@@ -13,8 +13,9 @@
     "xorencrypt": "ts-node src/examples/xorencrypt.ts",
     "phone": "ts-node src/examples/phone.ts",
     "lint": "tslint -c tslint.json src/**/*.{ts,spec.ts}",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "watch": "mocha -w -r ts-node/register src/**/*.spec.ts"
+    "test": "npm run build && npm run lint && npm run test:mocha",
+    "test:mocha": "mocha -r ts-node/register src/**/*.spec.ts",
+    "test:watch": "mocha -w -r ts-node/register src/**/*.spec.ts"
   },
   "author": "Frank Hassanabad",
   "license": "GPL",
