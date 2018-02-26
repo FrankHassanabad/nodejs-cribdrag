@@ -139,7 +139,25 @@ describe('conversions', () => {
     it('should xor to zero when the ciphertext is the same as the ascii code', () => {
       expect(conversions.xorPlainTextWithCrib('4141', 'A')).to.eql(['00', '00']);
     });
+  });
 
- });
+  describe('#throwIfLengthNotSame', () => {
+    it('should return undefined if two arrays are the same length of empty', () => {
+      expect(conversions.throwIfLengthNotSame([], [])).to.be.undefined;
+    });
+
+    it('should return undefined if two arrays are the same length of 2', () => {
+      expect(conversions.throwIfLengthNotSame(['1', '1'], ['1', '1'])).to.be.undefined;
+    });
+
+    it('should throw typeError if the left array is smaller than the right', () => {
+      expect(() => conversions.throwIfLengthNotSame(['1'], ['1', '1'])).to.throw(TypeError);
+    });
+
+    it('should throw typeError if the right array is smaller than the left', () => {
+      expect(() => conversions.throwIfLengthNotSame(['1', '1'], ['1'])).to.throw(TypeError);
+    });
+
+  });
 
 });

@@ -24,7 +24,7 @@ const inputPhoneNum = process.argv[2];
 const cipher = 'aes-256-ctr';
 const encryptedPhoneNumbers = phoneNumbers.map((phoneNumber) => encrypt(phoneNumber, cipher));
 
-let matches: any = [];
+let matches: ReadonlyArray<ReadonlyArray<string>> = [];
 
 for (let i = 0; i < encryptedPhoneNumbers.length - 1; ++i) {
   const encryptedPhoneNum1 = encryptedPhoneNumbers[i];

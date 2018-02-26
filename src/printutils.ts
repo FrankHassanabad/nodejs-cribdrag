@@ -1,7 +1,7 @@
 import { hexToString } from './conversions';
 
-export const printLine = (chunksInHex: string[], charSetRegex: string): void => {
-  chunksInHex.forEach((chunk: any, index: any) => {
+export const printLine = (chunksInHex: ReadonlyArray<string>, charSetRegex: string): void => {
+  chunksInHex.forEach((chunk, index) => {
     const hexString = hexToString(chunk);
     if (hexString.match(charSetRegex)) {
       console.log(`${index}: ${hexString} *** (possible drag match)`);
@@ -11,9 +11,5 @@ export const printLine = (chunksInHex: string[], charSetRegex: string): void => 
   });
 };
 
-export const printPlain = (chunksInHex: string[]): void => {
-  chunksInHex.forEach((chunk: any) => {
-    const hexString = hexToString(chunk);
-    console.log(hexString);
-  });
-};
+export const printPlain = (chunksInHex: ReadonlyArray<string>): void =>
+  chunksInHex.forEach(chunk => console.log(hexToString(chunk)));
