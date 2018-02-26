@@ -5,7 +5,7 @@
 Based on tooling and ideas from
 https://github.com/SpiderLabs/cribdrag
 
-And the articles it came from:
+And the articles it came from:  
 https://www.trustwave.com/Resources/SpiderLabs-Blog/The-Way-of-the-Cryptologist/  
 http://jarmoc.com/blog/2013/08/12/otp/
 
