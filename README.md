@@ -1,6 +1,6 @@
 # nodejs-cribdrag
 
-[![Build Status](https://travis-ci.org/FrankHassanabad/nodejs-cribdrag.svg?branch=master)](https://travis-ci.org/FrankHassanabad/nodejs-cribdrag)
+[![Build Status](https://travis-ci.org/FrankHassanabad/nodejs-cribdrag.svg?branch=master)](https://travis-ci.org/FrankHassanabad/nodejs-cribdrag) [![Dependency Status](https://beta.gemnasium.com/badges/github.com/FrankHassanabad/nodejs-cribdrag.svg)](https://beta.gemnasium.com/projects/github.com/FrankHassanabad/nodejs-cribdrag)
 
 Based on tooling and ideas from
 https://github.com/SpiderLabs/cribdrag
