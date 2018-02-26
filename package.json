@@ -13,7 +13,7 @@
     "xorencrypt": "ts-node src/examples/xorencrypt.ts",
     "phone": "ts-node src/examples/phone.ts",
     "lint": "tslint -c tslint.json src/**/*.{ts,spec.ts}",
-    "test": "npm run build && npm run lint && npm run test:mocha",
+    "test": "npm run build && npm run lint && npm run test:unit",
     "test:unit": "mocha -r ts-node/register src/**/*.spec.ts",
     "test:watch": "mocha -w -r ts-node/register src/**/*.spec.ts"
   },
