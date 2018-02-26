@@ -103,3 +103,23 @@ Getting the internal number can be as simple as
   * Trying 1 or 2 known public numbers
   * Insider giving you their phone number
   * etc...
+
+# Testing
+
+Runs lint, build, and test
+
+```
+$ npm test
+```
+
+Run just the unit tests
+
+```
+$ npm run test:unit
+```
+
+Remove the dest folder (clean)
+
+```
+$ npm run clean
+```
