@@ -22,7 +22,7 @@ const enterYourCrib = [
 
 const startup = () => {
   return inquirer
-  .prompt(enterYourCrib)
+  .prompt<{crib: string}>(enterYourCrib)
   .then(({ crib }) => {
     if (crib === '') {
       process.exit(0);
